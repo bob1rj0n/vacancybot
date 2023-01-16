@@ -52,6 +52,9 @@ export class FindHrVacansy {
     img: string
 
     @prop()
+    hashtegs: string
+
+    @prop()
     userMsgId: number
 
     @prop()

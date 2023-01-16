@@ -67,6 +67,9 @@ export class Vacancy {
     @prop({})
     img: string;
 
+    @prop()
+    hashtegs: string
+
     @prop({ default: false })
     isDeleted: boolean;
 

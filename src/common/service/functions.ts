@@ -103,3 +103,23 @@ export async function TelegrafApi(short_name, author_name, userId: number) {
 
     return URL.url
 }
+
+
+export async function generateHashtag(str) {
+    str = str.replace(/\s+/g, ' ')
+        .replace(/[\'\".,\/#!$%\\^&\*;:{}=\-_`~()\[\]|+@?<>]/g, '')
+        .replace(/\s{2,}/g, ' ');
+    if (str === '') {
+        return '';
+    } else {
+        let capEachWord = (str) => str
+            .trim()
+            .split(' ')
+            .map(word => word.toLowerCase(0))
+            .join(' #')
+
+        let HashtagIt = (str) => '#' + str;
+
+        return HashtagIt(capEachWord(str));
+    }
+}

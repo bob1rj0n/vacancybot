@@ -35,6 +35,8 @@ Ish joyi kerak:
 🕰 Murojaat qilish vaqti: ${Msg.timeToCall}
 🔎 Maqsad: ${Msg.goal}
 
+${Msg.hashtegs}
+
 © @${ctx.botInfo.username}
         `)
     }
@@ -51,6 +53,8 @@ Xodim kerak:
 🕰 Murojaat vaqti: ${Msg.timeToCall}
 🕰 Ish vaqti: ${Msg.timeOfWork}
 💰 Maosh: ${Msg.price}
+
+${Msg.hashtegs}
 
 © @${ctx.botInfo.username}
         `)

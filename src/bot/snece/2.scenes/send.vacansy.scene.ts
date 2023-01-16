@@ -38,6 +38,8 @@ Ish joyi kerak:
 🕰 Murojaat qilish vaqti: ${ctx.session.timeToCall}
 🔎 Maqsad: ${ctx.session.goal}
 
+${ctx.session.hashtegs}
+
 © @${ctx.botInfo.username}
 `)
     }
@@ -54,6 +56,8 @@ Xodim kerak:
 🕰 Murojaat vaqti: ${ctx.session.timeToCall_2}
 🕰 Ish vaqti: ${ctx.session.timeOfWork}
 💰 Maosh: ${ctx.session.price_2}
+
+${ctx.session.hashtegs}
 
 © @${ctx.botInfo.username}
         `)
@@ -100,7 +104,8 @@ sendToAdminScene.action(/✅/, async (ctx) => {
             timeToCall: ctx.session.timeToCall,
             goal: ctx.session.goal,
             userMsgId: ctx.session.userMsgId,
-            img: ctx.session.img
+            img: ctx.session.img,
+            hashtegs: ctx.session.hashtegs
         }
         vac = await VacancyModel.create(data);
     }
@@ -120,7 +125,8 @@ sendToAdminScene.action(/✅/, async (ctx) => {
             // maxPrice: ctx.session.maxPrice,
             userMsgId: ctx.session.userMsgId,
             addition: ctx.session.addition ? ctx.session.addition : null,
-            img: ctx.session.img
+            img: ctx.session.img,
+            hashtegs: ctx.session.hashtegs
         }
         vac = await FindHrVacansyModel.create(data);
     }
