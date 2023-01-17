@@ -28,10 +28,10 @@ Ish joyi kerak:
 👨‍💻 <b>Yo'nalish: ${Msg.direction}</b>
 📚 Texnologiya: ${Msg.technology}
 🇺🇿 Telegram: @${Msg.tgUsername} 
-📞 Aloqa: ${Msg.phone}
-🌐 Hudud: ${Msg.place}
-💰 Maosh: ${Msg.price}
-👨🏻‍💻 Kasbi: ${Msg.profession}
+📱 Aloqa: ${Msg.phone}
+📍 Hudud: ${Msg.place}
+💸 Maosh: ${Msg.price}
+👤 Kasbi: ${Msg.profession}
 🕰 Murojaat qilish vaqti: ${Msg.timeToCall}
 🔎 Maqsad: ${Msg.goal}
 
@@ -40,7 +40,7 @@ ${Msg.hashtegs}
 © @${ctx.botInfo.username}
         `)
     }
-    if (Msg.type == 'findHr') {
+    if (Msg.type == 'findHr' && Msg.link !== null) {
         msg = (`
 Xodim kerak:
 
@@ -48,11 +48,31 @@ Xodim kerak:
 👨‍💻 <b>Yo'nalish: ${Msg.direction}</b>
 📚 Texnologiya: ${Msg.technology}
 🇺🇿 Telegram: @${Msg.tgUsername} 
-🌐 Hudud: ${Msg.place}
-✍️ Mas'ul: ${Msg.responsible}
+📍 Hudud: ${Msg.place}
+👤 Mas'ul: ${Msg.responsible}
 🕰 Murojaat vaqti: ${Msg.timeToCall}
-🕰 Ish vaqti: ${Msg.timeOfWork}
-💰 Maosh: ${Msg.price}
+⏰ Ish vaqti: ${Msg.timeOfWork}
+💸 Maosh: ${Msg.price}
+📥 Ariza qoldirish: <a href="${Msg.link}">Link</a>
+
+${Msg.hashtegs}
+
+© @bekobod_jobs_bot
+        `)
+    }
+    if (Msg.type == 'findHr' && Msg.link === null){
+        msg = (`
+Xodim kerak:
+
+🏢 Idora: ${Msg.officeName}
+👨‍💻 <b>Yo'nalish: ${Msg.direction}</b>
+📚 Texnologiya: ${Msg.technology}
+🇺🇿 Telegram: @${Msg.tgUsername} 
+📍 Hudud: ${Msg.place}
+👤 Mas'ul: ${Msg.responsible}
+🕰 Murojaat vaqti: ${Msg.timeToCall}
+⏰ Ish vaqti: ${Msg.timeOfWork}
+💸 Maosh: ${Msg.price}
 
 ${Msg.hashtegs}
 
@@ -60,7 +80,7 @@ ${Msg.hashtegs}
         `)
     }
     const vacCahn = await ctx.telegram.sendPhoto(
-        "@IT_vacansy",
+        "@bekobod_job",
         {
             source: Msg.img
         },
@@ -80,7 +100,7 @@ ${Msg.hashtegs}
                 inline_keyboard: [
                     [
                         {
-                            text: "Link", url: `https://t.me/IT_vacansy/${vacCahn.message_id}`
+                            text: "Link", url: `https://t.me/bekobod_job/${vacCahn.message_id}`
                         }
                     ]
                 ]

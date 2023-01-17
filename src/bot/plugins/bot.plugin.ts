@@ -9,8 +9,6 @@ import { mainScene } from "../snece/0.scenes/main.scene";
 import { ageScene } from "../snece/1.scenes/age.scene";
 import { connectScene } from "../snece/1.scenes/connect.scene";
 import { goalScene } from "../snece/1.scenes/goal.scene";
-import { maxSumScene } from "../snece/1.scenes/maxSum.scene";
-import { minSumScene } from "../snece/1.scenes/minSum.scene";
 import { nameScene } from "../snece/1.scenes/name.scene";
 import { placeScene } from "../snece/1.scenes/place.scene";
 import { professionScene } from "../snece/1.scenes/profession.scene";
@@ -22,8 +20,6 @@ import { chooseLanguageScene } from "../snece/register/chooseLanguage.scene";
 import { botStart } from "../servers/bot.start";
 import { chooseVacansyScene } from "../snece/0.scenes/chooseVacansy.scene";
 import { officeNameScene } from "../snece/3.scenes/officeName.scene";
-import { minPriceScene } from "../snece/3.scenes/minPrice.scene";
-import { maxPriceScene } from "../snece/3.scenes/maxPrice.scene";
 import { technology2Scene } from "../snece/3.scenes/technology.scene";
 import { place2Scene } from "../snece/3.scenes/place.scene";
 import { timeToCall2Scene } from "../snece/3.scenes/timeToCall.scene";
@@ -36,6 +32,8 @@ import { direction2Scene } from "../snece/3.scenes/direction.scene";
 import { myVacancyScene } from "../snece/4.scenes/myVacancy.scene";
 import { privacyScene } from "../snece/0.scenes/privacy.scene";
 import { price2Scene } from "../snece/3.scenes/price.scene";
+import { linkScene } from "../snece/3.scenes/link.scene";
+import { enterLinkScene } from "../snece/3.scenes/enterLink.scene";
 
 export interface MyContext extends Context {
     session: any;
@@ -58,8 +56,6 @@ const stages = new Scenes.Stage<MyContext>([
     placeScene,
     connectScene,
     professionScene,
-    minSumScene,
-    maxSumScene,
     timeToCallScene,
     goalScene,
     sendToAdminScene,
@@ -68,8 +64,6 @@ const stages = new Scenes.Stage<MyContext>([
 
     ///hodim kk
     officeNameScene,
-    minPriceScene,
-    maxPriceScene,
     technology2Scene,
     place2Scene,
     timeToCall2Scene,
@@ -81,6 +75,8 @@ const stages = new Scenes.Stage<MyContext>([
     myVacancyScene,
     privacyScene,
     price2Scene,
+    linkScene,
+    enterLinkScene
 ])
 
 stages.command('start', botStart)

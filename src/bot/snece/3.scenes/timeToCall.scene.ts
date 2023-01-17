@@ -13,5 +13,6 @@ timeToCall2Scene.enter(async (ctx) => {
 
 timeToCall2Scene.on('text', async (ctx) => {
     ctx.session.timeToCall_2 = ctx.message.text;
-    await ctx.scene.enter(SceneNames.TIME_OF_WORK)
+    // await ctx.scene.enter(SceneNames.TIME_OF_WORK)
+    await ctx.scene.enter(SceneNames.LINK)
 })

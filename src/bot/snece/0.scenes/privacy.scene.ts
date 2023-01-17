@@ -8,7 +8,7 @@ export const privacyScene = new Scenes.BaseScene<MyContext>(SceneNames.PRIVACY)
 
 privacyScene.enter(async (ctx) => {
     await ctx.reply(`Ushbu bot orqali oson IT vakansiyalar tayyorlashingiz mumkin. 
-Vakansiya admin tomonidan tekshirilgandan so'ng @IT_vacansy kanaliga joylashtiriladi.
+Vakansiya admin tomonidan tekshirilgandan so'ng @bekobod_job kanaliga joylashtiriladi.
 Boshlash uchun '📉 Vakansiya joylash' tugmasini bosing, savollarga javob bering va o'z vakansiyangizni tayyorlang.
 `)
     await ctx.scene.enter(SceneNames.MAIN)

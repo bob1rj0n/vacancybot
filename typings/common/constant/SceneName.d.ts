@@ -59,6 +59,8 @@ export declare enum SceneNames {
     CHANGE_LANGUAGE = "changeLanguage",
     DIRECTION_2 = "direction2",
     PRICE_2 = "price2",
+    LINK = "link",
+    ENTER_LINK = "enterLink",
     MY_VACANCY = "myVacancy",
     PRIVACY = "privacy"
 }

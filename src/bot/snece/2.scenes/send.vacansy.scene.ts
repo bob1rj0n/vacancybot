@@ -18,7 +18,7 @@ sendToAdminScene.enter(async (ctx) => {
     let buttons = [];
     buttons.push([Markup.button.callback("✅ Ha", "✅"), Markup.button.callback("❌ Yo'q", "❌")]);
 
-    const img = await addTextOnImage(ctx.session);
+    // const img = await addTextOnImage(ctx.session);
 
     await ctx.replyWithHTML(Messages.CheckAndSendVacancy[lang]);
     let msg;
@@ -31,10 +31,10 @@ Ish joyi kerak:
 👨‍💻 <b>Yo'nalish: ${ctx.session.direction}</b>
 📚 Texnologiya: ${ctx.session.technology}
 🇺🇿 Telegram: @${ctx.from.username}
-📞 Aloqa: ${ctx.session.connect}
-🌐 Hudud: ${ctx.session.place}
-💰 Maosh: ${ctx.session.price}
-👨🏻‍💻 Kasbi: ${ctx.session.profession}
+📱 Aloqa: ${ctx.session.connect}
+📍 Hudud: ${ctx.session.place}
+💸 Maosh: ${ctx.session.price}
+👤 Kasbi: ${ctx.session.profession}
 🕰 Murojaat qilish vaqti: ${ctx.session.timeToCall}
 🔎 Maqsad: ${ctx.session.goal}
 
@@ -43,7 +43,7 @@ ${ctx.session.hashtegs}
 © @${ctx.botInfo.username}
 `)
     }
-    if (ctx.session.vacancyType == "findHr") {
+    if (ctx.session.vacancyType == "findHr" && ctx.session.link !== null) {
         msg = (`
 Xodim kerak:
 
@@ -51,11 +51,31 @@ Xodim kerak:
 👨‍💻 <b>Yo'nalish: ${ctx.session.direction}</b>
 📚 Texnologiya: ${ctx.session.technology_2}
 🇺🇿 Telegram: @${ctx.from.username} 
-🌐 Hudud: ${ctx.session.place_2}
-✍️ Mas'ul: ${ctx.session.responsible}
+📍 Hudud: ${ctx.session.place_2}
+👤 Mas'ul: ${ctx.session.responsible}
 🕰 Murojaat vaqti: ${ctx.session.timeToCall_2}
-🕰 Ish vaqti: ${ctx.session.timeOfWork}
-💰 Maosh: ${ctx.session.price_2}
+⏰ Ish vaqti: ${ctx.session.timeOfWork}
+💸 Maosh: ${ctx.session.price_2}
+📥 Ariza qoldirish: <a href="${ctx.session.link}">Link</a>
+
+${ctx.session.hashtegs}
+
+© @${ctx.botInfo.username}
+        `)
+    }
+    if (ctx.session.vacancyType == "findHr" && ctx.session.link === null) {
+        msg = (`
+Xodim kerak:
+
+🏢 Idora: ${ctx.session.officeName}
+👨‍💻 <b>Yo'nalish: ${ctx.session.direction}</b>
+📚 Texnologiya: ${ctx.session.technology_2}
+🇺🇿 Telegram: @${ctx.from.username} 
+📍 Hudud: ${ctx.session.place_2}
+👤 Mas'ul: ${ctx.session.responsible}
+🕰 Murojaat vaqti: ${ctx.session.timeToCall_2}
+⏰ Ish vaqti: ${ctx.session.timeOfWork}
+💸 Maosh: ${ctx.session.price_2}
 
 ${ctx.session.hashtegs}
 
@@ -64,7 +84,7 @@ ${ctx.session.hashtegs}
     }
     ctx.session.msg = msg;
 
-    const uMsg = await ctx.replyWithPhoto({ source: img },
+    const uMsg = await ctx.replyWithPhoto({ source: "./uploads/image.jpg" },
         {
             caption: msg,
             parse_mode: "HTML",
@@ -74,7 +94,7 @@ ${ctx.session.hashtegs}
         }
     );
     ctx.session.userMsgId = uMsg.message_id;
-    ctx.session.img = img;
+    ctx.session.img = "./uploads/image.jpg";
     console.log("send vacancy scene : ", ctx.session)
 
 })
@@ -126,12 +146,14 @@ sendToAdminScene.action(/✅/, async (ctx) => {
             userMsgId: ctx.session.userMsgId,
             addition: ctx.session.addition ? ctx.session.addition : null,
             img: ctx.session.img,
-            hashtegs: ctx.session.hashtegs
+            hashtegs: ctx.session.hashtegs,
+            link: ctx.session.link
         }
         vac = await FindHrVacansyModel.create(data);
     }
     const vacInAdmin = await bot_admin.telegram.sendPhoto(
         651985244,
+        // 1661832397,
         {
             source: ctx.session.img
         },

@@ -18,6 +18,7 @@ export declare class Vacancy {
     userMsgId: number;
     messageId: number;
     img: string;
+    hashtegs: string;
     isDeleted: boolean;
     deletedAt?: Date;
     createdAt?: Date;

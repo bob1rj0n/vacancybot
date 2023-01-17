@@ -3,6 +3,7 @@ import { UserModel } from "../../common/db/model/user.model"
 
 export async function botStart(ctx?) {
     try {
+        console.log(ctx.from);
         let user;
         user = await UserModel.findOne({ userId: ctx.from.id })
         if (!user) {

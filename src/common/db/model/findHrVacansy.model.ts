@@ -63,6 +63,9 @@ export class FindHrVacansy {
     @prop()
     addition: string
 
+    @prop({ default: null })
+    link: string
+
     createdAt: Date
     updatedAt: Date
 }

@@ -13,7 +13,6 @@ placeScene.enter(async (ctx) => {
 
 placeScene.on('text', async (ctx) => {
     ctx.session.place = ctx.message.text;
-    // await ctx.scene.enter(SceneNames.MIN_SUM);
     await ctx.scene.enter(SceneNames.PRICE);
 })
 

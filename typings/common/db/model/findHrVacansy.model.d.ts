@@ -14,9 +14,11 @@ export declare class FindHrVacansy {
     maxPrice: number;
     msg: string;
     img: string;
+    hashtegs: string;
     userMsgId: number;
     messageId: number;
     addition: string;
+    link: string;
     createdAt: Date;
     updatedAt: Date;
 }

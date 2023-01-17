@@ -99,6 +99,16 @@ export declare const Messages: {
         uz: string;
         ru: string;
     };
+    LinkQuestion: {
+        en: string;
+        uz: string;
+        ru: string;
+    };
+    EnterLink: {
+        en: string;
+        uz: string;
+        ru: string;
+    };
     Member: {
         en: string;
         uz: string;

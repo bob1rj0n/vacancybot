@@ -100,8 +100,16 @@ export const Messages = {
         "uz": `<b>Marhamat yo'nalishingizni kiriting! (Masalan: Backend)</b>`,
         "ru": `<b>Введите пункт назначения! (Например: Backend)</b>`
     },
-
-
+    LinkQuestion: {
+        "en": `<b>Can you post a link to apply?</b>`,
+        "uz": `<b>Ariza qoldirish uchun link qoldirasizmi?</b>`,
+        "ru": `<b>Можете скинуть ссылку для подачи заявки?</b>`
+    },
+    EnterLink: {
+        "en": `<b>Please enter the link to submit an application!(For example: https://www.google.com or https://t.me/telegram-username)</b>`,
+        "uz": `<b>Marhamat ariza qoldirish uchun linkni kiriting!(Masalan: https://www.google.com yoki https://t.me/telegram-username)</b>`,
+        "ru": `<b>Пожалуйста, введите ссылку, чтобы отправить заявку!(Например: https://www.google.com или https://t.me/telegram-username)</b>`
+    },
 
 
     Member: {
@@ -169,7 +177,7 @@ export const Messages = {
         "uz": `<b>Mutaxassisligingizni kiriting</b>`,
         "ru": `<b>Введите свою специальность</b>`
     },
-  
+
     PhoneScene: {
         "en": `<b>Enter the phone number\n(For example: +998901234567)</b>`,
         "uz": `<b>Telefon raqamni kiriting\n(Masalan : +998901234567)</b>`,
