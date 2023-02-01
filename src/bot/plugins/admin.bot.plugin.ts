@@ -22,7 +22,9 @@ const stages = new Scenes.Stage<MyContext>([
 ])
 
 async function start(ctx) {
-    ctx.scene.enter(SceneNames.ADMIN)
+    if (ctx.from.id == 1661832397) {
+        ctx.scene.enter(SceneNames.ADMIN)
+    }
 }
 
 stages.command('start', start)

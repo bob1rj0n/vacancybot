@@ -123,3 +123,130 @@ export async function generateHashtag(str) {
         return HashtagIt(capEachWord(str));
     }
 }
+
+export async function getVacancy(data) {
+
+    let msg;
+    if (data.vacancyType == "findWork") {
+        msg = (`
+Ish joyi kerak:
+
+👨‍💼 Xodim: ${data.name}
+🕑 Yosh: ${data.age}
+👨‍💻 <b>Yo'nalish: ${data.direction}</b>
+📚 Texnologiya: ${data.technology}
+📱 Aloqa: ${data.phone}
+📍 Hudud: ${data.place}
+💸 Maosh: ${data.price}
+👤 Kasbi: ${data.profession}
+🕰 Murojaat qilish vaqti: ${data.timeToCall}
+🔎 Maqsad: ${data.goal}
+
+${data.hashtegs}
+
+© @bekobod_jobs_bot
+`)
+    }
+    if (data.vacancyType == "findHr" && data.link !== null) {
+        msg = (`
+Xodim kerak:
+
+🏢 Idora: ${data.officeName}
+👨‍💻 <b>Yo'nalish: ${data.direction}</b>
+📚 Texnologiya: ${data.technology_2}
+📍 Hudud: ${data.place_2}
+👤 Mas'ul: ${data.responsible}
+🕰 Murojaat vaqti: ${data.timeToCall_2}
+⏰ Ish vaqti: ${data.timeOfWork}
+💸 Maosh: ${data.price_2}
+📥 Ariza qoldirish: <a href="${data.link}">Link</a>
+
+${data.hashtegs}
+
+© @bekobod_jobs_bot
+        `)
+    }
+    if (data.vacancyType == "findHr" && data.link === null) {
+        msg = (`
+Xodim kerak:
+
+🏢 Idora: ${data.officeName}
+👨‍💻 <b>Yo'nalish: ${data.direction}</b>
+📚 Texnologiya: ${data.technology_2}
+📍 Hudud: ${data.place_2}
+👤 Mas'ul: ${data.responsible}
+🕰 Murojaat vaqti: ${data.timeToCall_2}
+⏰ Ish vaqti: ${data.timeOfWork}
+💸 Maosh: ${data.price_2}
+
+${data.hashtegs}
+
+© @bekobod_jobs_bot
+        `)
+    }
+
+    return msg;
+}
+
+export async function getVacansyForChannel(Msg) {
+    let msg;
+    if (Msg.vacancyType == "findWork") {
+        msg = (`
+Ish joyi kerak:
+
+👨‍💼 Xodim: ${Msg.name}
+🕑 Yosh: ${Msg.age}
+👨‍💻 <b>Yo'nalish: ${Msg.direction}</b>
+📚 Texnologiya: ${Msg.technology}
+📱 Aloqa: ${Msg.phone}
+📍 Hudud: ${Msg.place}
+💸 Maosh: ${Msg.price}
+👤 Kasbi: ${Msg.profession}
+🕰 Murojaat qilish vaqti: ${Msg.timeToCall}
+🔎 Maqsad: ${Msg.goal}
+
+${Msg.hashtegs}
+
+© @bekobod_jobs_bot
+`)
+    }
+    if (Msg.vacancyType == "findHr" && Msg.link !== null) {
+        msg = (`
+Xodim kerak:
+
+🏢 Idora: ${Msg.officeName}
+👨‍💻 <b>Yo'nalish: ${Msg.direction}</b>
+📚 Texnologiya: ${Msg.technology}
+📍 Hudud: ${Msg.place}
+👤 Mas'ul: ${Msg.responsible}
+🕰 Murojaat vaqti: ${Msg.timeToCall}
+⏰ Ish vaqti: ${Msg.timeOfWork}
+💸 Maosh: ${Msg.price}
+📥 Ariza qoldirish: <a href="${Msg.link}">Link</a>
+
+${Msg.hashtegs}
+
+© @bekobod_jobs_bot
+        `)
+    }
+    if (Msg.vacancyType == "findHr" && Msg.link === null) {
+        msg = (`
+Xodim kerak:
+
+🏢 Idora: ${Msg.officeName}
+👨‍💻 <b>Yo'nalish: ${Msg.direction}</b>
+📚 Texnologiya: ${Msg.technology}
+📍 Hudud: ${Msg.place}
+👤 Mas'ul: ${Msg.responsible}
+🕰 Murojaat vaqti: ${Msg.timeToCall}
+⏰ Ish vaqti: ${Msg.timeOfWork}
+💸 Maosh: ${Msg.price}
+
+${Msg.hashtegs}
+
+© @bekobod_jobs_bot
+        `)
+    }
+
+    return msg;
+}

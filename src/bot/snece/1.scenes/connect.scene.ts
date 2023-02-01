@@ -17,7 +17,7 @@ connectScene.on('text', async (ctx) => {
     if (!phone || phone > 999000000000 || phone < 998000000000) {
         await ctx.replyWithHTML(Messages.ErrorToNumber[lang])
     } else {
-        ctx.session.connect = ctx.message.text;
+        ctx.session.phone = ctx.message.text;
         await ctx.scene.enter(SceneNames.PLACE);
     }
 })

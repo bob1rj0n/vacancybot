@@ -19,6 +19,7 @@ export declare class Vacancy {
     messageId: number;
     img: string;
     hashtegs: string;
+    vacancyType: string;
     isDeleted: boolean;
     deletedAt?: Date;
     createdAt?: Date;

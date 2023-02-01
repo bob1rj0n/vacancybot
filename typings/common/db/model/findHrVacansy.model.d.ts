@@ -10,14 +10,13 @@ export declare class FindHrVacansy {
     tgUsername: string;
     timeOfWork: string;
     timeToCall: string;
-    minPrice: number;
-    maxPrice: number;
     msg: string;
     img: string;
     hashtegs: string;
     userMsgId: number;
     messageId: number;
     addition: string;
+    vacancyType: string;
     link: string;
     createdAt: Date;
     updatedAt: Date;

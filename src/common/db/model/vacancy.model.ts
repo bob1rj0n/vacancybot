@@ -70,6 +70,9 @@ export class Vacancy {
     @prop()
     hashtegs: string
 
+    @prop()
+    vacancyType: string
+
     @prop({ default: false })
     isDeleted: boolean;
 

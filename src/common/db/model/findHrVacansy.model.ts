@@ -40,12 +40,6 @@ export class FindHrVacansy {
     timeToCall: string
 
     @prop()
-    minPrice: number
-
-    @prop()
-    maxPrice: number
-
-    @prop()
     msg: string
 
     @prop()
@@ -62,6 +56,9 @@ export class FindHrVacansy {
 
     @prop()
     addition: string
+
+    @prop()
+    vacancyType: string
 
     @prop({ default: null })
     link: string
