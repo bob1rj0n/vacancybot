@@ -119,6 +119,11 @@ export declare const Messages: {
         uz: string;
         ru: string;
     };
+    Addition: {
+        en: string;
+        uz: string;
+        ru: string;
+    };
 };
 export declare const Buttons: {
     Main: {
