@@ -33,7 +33,7 @@ async function plugin(server, opt, done) {
     server.post("/" + ENV.ADMIN_BOT_TOKEN, (req, res) => res.reply({ root: true }))
     bot_admin.use(session(mongoose.connection.db, { collectionName: "sessions2", sessionName: "session" }))
     bot_admin.use(stages.middleware())
-    await server.register(require("@fastify/middie"))
+    // await server.register(require("@fastify/middie"))
     await server.register(bot_admin.webhookCallback("/" + ENV.ADMIN_BOT_TOKEN))
     bot_admin.start(start);
     bot_admin.launch()

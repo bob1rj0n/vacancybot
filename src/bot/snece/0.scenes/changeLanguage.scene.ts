@@ -17,7 +17,7 @@ changeLanguageScene.enter(async (ctx) => {
 
 changeLanguageScene.hears(/🇺🇿/, async (ctx) => {
     ctx.session.language = "uz"
-    await ctx.deleteMessage(ctx.message?.message_id)
+    // await ctx.deleteMessage(ctx.message?.message_id)
 
     await UserModel.updateOne({ userId: ctx.from.id }, { language: "uz" })
 
@@ -26,7 +26,7 @@ changeLanguageScene.hears(/🇺🇿/, async (ctx) => {
 
 changeLanguageScene.hears(/🇺🇸/, async (ctx) => {
     ctx.session.language = "en"
-    await ctx.deleteMessage(ctx.message?.message_id)
+    // await ctx.deleteMessage(ctx.message?.message_id)
 
     await UserModel.updateOne({ userId: ctx.from.id }, { language: "en" })
 
@@ -35,7 +35,7 @@ changeLanguageScene.hears(/🇺🇸/, async (ctx) => {
 
 changeLanguageScene.hears(/🇷🇺/, async (ctx) => {
     ctx.session.language = "ru"
-    await ctx.deleteMessage(ctx.message?.message_id)
+    // await ctx.deleteMessage(ctx.message?.message_id)
 
     await UserModel.updateOne({ userId: ctx.from.id }, { language: "ru" })
 

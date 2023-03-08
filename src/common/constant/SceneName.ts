@@ -66,6 +66,7 @@ export enum SceneNames {
     PRICE_2 = "price2",
     LINK = "link",
     ENTER_LINK = "enterLink",
+    ADDITION_2 = "addition2",
 
     ///
     MY_VACANCY = "myVacancy",

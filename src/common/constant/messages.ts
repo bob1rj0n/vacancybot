@@ -21,9 +21,9 @@ export const Messages = {
         "ru": `<b>Главное меню</b>`
     },
     Technology: {
-        "en": `<b>Please enter the technology!(For example: Node.js, Javascript, Database...)</b>`,
-        "uz": `<b>Marhamat Technologiyani kiriting!(Masalan: Node.js, Javascript, Database ...)</b>`,
-        "ru": `<b>Пожалуйста, введите технологию!(Например: Node.js, Javascript, база данных...)</b>`
+        "en": `<b>Please enter the technology!(For example: Russian language knowledge or knowledge is higher or secondary special...)</b>`,
+        "uz": `<b>Marhamat Technologiyani kiriting!(Masalan: Rus tilini bilish yoki malumoti oliy yoki o'rta maxsus ...)</b>`,
+        "ru": `<b>Пожалуйста, введите технологию!(Например: Знание русского языка или знание высшее или среднее специальное...)</b>`
     },
     ConnectPhone: {
         "en": `<b>Enter the contact phone number\n(For example: +998901234567)</b>`,
@@ -120,7 +120,11 @@ export const Messages = {
         "uz": `<b>Marhamat yoshingizni kiriting</b>`,
         "ru": `<b>Пожалуйста, введите свой возраст</b>`
     },
-
+    Addition: {
+        "en": `<b>Enter details or omit</b>`,
+        "uz": `<b>Batafsil malumot kiriting yoki o'tkazib yuboring</b>`,
+        "ru": `<b>Введите данные или пропустите</b>`
+    }
 }
 
 export const Buttons = {

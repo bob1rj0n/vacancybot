@@ -34,6 +34,7 @@ import { privacyScene } from "../snece/0.scenes/privacy.scene";
 import { price2Scene } from "../snece/3.scenes/price.scene";
 import { linkScene } from "../snece/3.scenes/link.scene";
 import { enterLinkScene } from "../snece/3.scenes/enterLink.scene";
+import { addition2Scene } from "../snece/3.scenes/addition.scene";
 
 export interface MyContext extends Context {
     session: any;
@@ -76,7 +77,8 @@ const stages = new Scenes.Stage<MyContext>([
     privacyScene,
     price2Scene,
     linkScene,
-    enterLinkScene
+    enterLinkScene,
+    addition2Scene,
 ])
 
 stages.command('start', botStart)

@@ -160,6 +160,7 @@ Xodim kerak:
 ⏰ Ish vaqti: ${data.timeOfWork}
 💸 Maosh: ${data.price_2}
 📥 Ariza qoldirish: <a href="${data.link}">Link</a>
+📝 Batafsil: ${data.addition}
 
 ${data.hashtegs}
 
@@ -178,6 +179,7 @@ Xodim kerak:
 🕰 Murojaat vaqti: ${data.timeToCall_2}
 ⏰ Ish vaqti: ${data.timeOfWork}
 💸 Maosh: ${data.price_2}
+📝 Batafsil: ${data.addition}
 
 ${data.hashtegs}
 
@@ -223,6 +225,7 @@ Xodim kerak:
 ⏰ Ish vaqti: ${Msg.timeOfWork}
 💸 Maosh: ${Msg.price}
 📥 Ariza qoldirish: <a href="${Msg.link}">Link</a>
+📝 Batafsil: ${Msg.addition}
 
 ${Msg.hashtegs}
 
@@ -241,6 +244,7 @@ Xodim kerak:
 🕰 Murojaat vaqti: ${Msg.timeToCall}
 ⏰ Ish vaqti: ${Msg.timeOfWork}
 💸 Maosh: ${Msg.price}
+📝 Batafsil: ${Msg.addition}
 
 ${Msg.hashtegs}
 

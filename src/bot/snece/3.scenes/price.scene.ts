@@ -14,5 +14,5 @@ price2Scene.enter(async (ctx) => {
 price2Scene.on('text', async (ctx) => {
     let price = ctx.message.text;
     ctx.session.price_2 = price;
-    await ctx.scene.enter(SceneNames.SEND_TO_ADMIN)
+    await ctx.scene.enter(SceneNames.ADDITION_2)
 })

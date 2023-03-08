@@ -13,7 +13,6 @@ technology2Scene.enter(async (ctx) => {
 
 technology2Scene.on('text', async (ctx) => {
     let tech = ctx.message.text;
-    ctx.session.hashtegs = await generateHashtag(`ish_joyi, ${tech}`);
     ctx.session.technology_2 = tech;
     await ctx.scene.enter(SceneNames.PLACE_2)
 });

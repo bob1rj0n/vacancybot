@@ -16,7 +16,7 @@ sendToAdminScene.enter(async (ctx) => {
     let buttons = [];
     buttons.push([Markup.button.callback("✅ Ha", "✅"), Markup.button.callback("❌ Yo'q", "❌")]);
 
-    await ctx.replyWithHTML(Messages.CheckAndSendVacancy[lang]);
+    await ctx.replyWithHTML(Messages.CheckAndSendVacancy[lang], Markup.removeKeyboard());
     let msg = await getVacancy(ctx.session);
     ctx.session.msg = msg;
 
@@ -77,11 +77,11 @@ sendToAdminScene.action(/✅/, async (ctx) => {
             timeOfWork: ctx.session.timeOfWork,
             timeToCall: ctx.session.timeToCall_2,
             userMsgId: ctx.session.userMsgId,
-            addition: ctx.session.addition ? ctx.session.addition : null,
+            addition: ctx.session.addition,
             img: ctx.session.img,
             hashtegs: ctx.session.hashtegs,
             link: ctx.session.link,
-            vacancyType: ctx.session.vacancyType
+            vacancyType: ctx.session.vacancyType,
         }
         vac = await FindHrVacansyModel.create(data);
     }
